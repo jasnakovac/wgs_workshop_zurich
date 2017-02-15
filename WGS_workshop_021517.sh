@@ -95,7 +95,7 @@ rm -r *.sam
 /fgczdata/local/kSNP3/Kchooser VC.fasta
 
 # 8c - Run kSNP; -ML for maximum likelihood tree (default is parsimony); -core for core SNPs; -min_frac 0.9 for SNPs identified in at least 90% of the genomes; -vcf for vcf file in the output
-/fgczdata/local/kSNP3/kSNP3 -in in_list -outdir out -k -21 -CPU 8 -vcf -ML -core | tee runlog.txt
+/fgczdata/local/kSNP3/kSNP3 -in in_list -outdir out -k 21 -CPU 8 -vcf -ML -core | tee runlog.txt
 
 # 9 - Build ML tree with RaxML; -ASC_ for ascertainment correction in case of anlyzing only variable sites (i.e., SNPs)
 /usr/local/ngseq/bin/raxml -f a -x 165 -m ASC_GTRGAMMA --asc-corr=lewis --no-bfgs -p 596 -N 1000 -s core_SNPs_matrix.fasta -n ASC_core_SNPs.tre
