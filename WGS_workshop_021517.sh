@@ -4,7 +4,7 @@
 # NGS workshop - WGS analyses
 
 # ssh connect to the fgcz node (Windows users connect through PuTTY)
-ssh <assigned IP address>
+ssh username@assigned_IP_address
 
 # Copy a file from your computer to the server (Windows users transfer files through WinSCP)
 scp -r my_local_directory 172.23.89.27:/fgczdata/data/wgs
@@ -16,7 +16,6 @@ scp -r 172.23.89.27:/fgczdata/data/wgs/directory_to_copy .
 fgcz-h-110:/fgczdata/data
 
 # 1 - Extract sequences from SRA (download only an experiment assigned to you)
-
 wget http://sra-download.ncbi.nlm.nih.gov/srapub/SRR2541537
 wget http://sra-download.ncbi.nlm.nih.gov/srapub/SRR2541601
 wget http://sra-download.ncbi.nlm.nih.gov/srapub/SRR2541602
@@ -36,7 +35,6 @@ wget http://sra-download.ncbi.nlm.nih.gov/srapub/SRR2541674
 wget http://sra-download.ncbi.nlm.nih.gov/srapub/SRR2541680
 
 # 2 - Convert SRR to fastq.gz (convert only a sequence assigned to you)
-
 fastq-dump -I --gzip --split-files SRR2541537
 fastq-dump -I --gzip --split-files SRR2541601
 fastq-dump -I --gzip --split-files SRR2541602
