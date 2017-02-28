@@ -63,7 +63,7 @@ fastq-dump -I --gzip --split-files SRR2541680
 /usr/local/ngseq/bin/fastqc SRR2541680_2.trimmedP.fastq.gz
 
 # 5 - Assemble genomes de novo with SPAdes 
-python /usr/local/ngseq/bin/spades.py -k 21,33,55,77,99,127 --careful -1 SRR2541680_1.trimmedP.fastq.gz -2 SRR2541680_2.trimmedP.fastq.gz -o SRR2541680 –t 7 -m 20
+python /usr/local/ngseq/bin/spades.py -k 21,33,55,77,99,127 --careful -1 SRR2541680_1.trimmedP.fastq.gz -2 SRR2541680_2.trimmedP.fastq.gz -o SRR2541680_assembly –t 7 -m 20
 
 # 6 - Check the assembly quality with QUAST
 python /fgczdata/local/quast-4.4/quast.py –o SRR2541680_quast --min-contig 1 SRR2541680_contigs.fasta
